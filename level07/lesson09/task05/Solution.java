@@ -23,25 +23,20 @@ public class Solution
 
         ArrayList<String> result = doubleValues(list);
 
-        for (int i=0;i<10;i++){
-            System.out.println(result.get(i));
+        for (String s:result){
+            System.out.println(s);
         }
 
     }
 
     public static ArrayList<String> doubleValues(ArrayList<String> list)
     {
-        String tmpSting="";
+        ArrayList<String> tmpList = new ArrayList<String>();
         int i=0;
         for (String s:list) {
-            for (char c:s.toCharArray())
-            {
-                tmpSting=tmpSting+c+c;
-            }
-            list.set(i,tmpSting);
-            tmpSting="";
-            i++;
+            tmpList.add(s);
+            tmpList.add(s);
         }
-        return list;
+        return tmpList;
     }
 }

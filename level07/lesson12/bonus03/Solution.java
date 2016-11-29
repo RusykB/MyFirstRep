@@ -32,20 +32,37 @@ public class Solution
 
     public static void sort(int[] array)
     {
-        int arrLength = array.length;
         int maxI=array[0];
-        int minI=array[arrLength];
+        int minI=maxI;
+        int maxIndx=0;
+        int minIndx=0;
 
         int startIndx = 0;
-        int endIndx = arrLength;
+        int endIndx = array.length-1;
 
-        for (int i=startIndx;i<endIndx;i++){
-            //minI = minI > array[i] ? minI : array [i];
-            if (maxI<array[i]) {
-                maxI=array[i];
-            } else if (minI>array[i]){
-                minI=array[i];
+        while (startIndx<endIndx)
+        {
+            for (int i = startIndx; i <= endIndx; i++)
+            {
+                if (maxI < array[i])
+                {
+                    maxI = array[i];
+                    maxIndx = i;
+                }
+                if (minI > array[i])
+                {
+                    minI = array[i];
+                    minIndx = i;
+                }
             }
+            array[maxIndx] = array[startIndx];
+            array[startIndx] = maxI;
+            array[minIndx] = array[endIndx];
+            array[endIndx] = minI;
+            endIndx--;
+            startIndx++;
+            maxI=array[startIndx];
+            minI=maxI;
         }
     }
 

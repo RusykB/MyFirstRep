@@ -55,14 +55,19 @@ public class Solution
                     minIndx = i;
                 }
             }
-            array[maxIndx] = array[startIndx];
-            array[startIndx] = maxI;
-            array[minIndx] = array[endIndx];
-            array[endIndx] = minI;
-            endIndx--;
+                array[maxIndx] = array[startIndx];
+                array[startIndx] = maxI;
+
+            if (minIndx!=startIndx) {
+                array[minIndx] = array[endIndx];
+                array[endIndx] = minI;
+                endIndx--;
+            }
             startIndx++;
             maxI=array[startIndx];
             minI=maxI;
+            maxIndx=startIndx;
+            minIndx=startIndx;
         }
     }
 

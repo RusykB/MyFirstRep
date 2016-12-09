@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /* Мама Мыла Раму. Теперь с большой буквы
 Написать программу, которая вводит с клавиатуры строку текста.
@@ -30,12 +31,15 @@ public class Solution
         String tmpStr;
         String fullString="";
 
-        for (String tmp:s.split(" +"))
+        for (String tmp:s.split(" "))
         {
             tmpChr=tmp.toCharArray();
-            tmpStr=""+tmpChr[0];
-            fullString=fullString+tmpStr.toUpperCase()+tmp.replaceFirst(".?","")+" ";
+            tmpStr=(tmpChr.length==0) ? "":""+tmpChr[0];
+
+            fullString=fullString+tmpStr.toUpperCase()+tmp.replaceFirst("^.?","")+" ";
+            //System.out.println(fullString);
         }
+        fullString=fullString.replaceFirst(" $","");
 
         System.out.println(fullString);
 

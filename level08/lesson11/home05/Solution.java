@@ -23,36 +23,22 @@ public class Solution
 {
     public static void main(String[] args) throws IOException
     {
-        List<String> list = new ArrayList<String>();
-
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = reader.readLine();
 
-        //Pattern p = Pattern.compile("^[a-z0-9_-]{3,15}$");
-        //Matcher m = p.matcher(userNameString);
-        //s.replaceAll("^[а-я]","x");
-
         char[] tmpChr;
         String tmpStr;
-        char ch;
-        for (String tmp:s.split(" * "))
+        String fullString="";
+
+        for (String tmp:s.split(" +"))
         {
-            //System.out.println(tmp);
             tmpChr=tmp.toCharArray();
-
             tmpStr=""+tmpChr[0];
-            tmpStr=tmpStr.toUpperCase();
-            System.out.println(tmpStr);
-            tmpStr=tmp.replaceFirst(" ",tmpStr);
-            System.out.println(tmpStr);
-            //tmp.toUpperCase(); //tmpChr[0]
-            //list.add(tmp.toCharArray().[0]);
-
+            fullString=fullString+tmpStr.toUpperCase()+tmp.replaceFirst(".?","")+" ";
         }
 
-        System.out.println(list);
+        System.out.println(fullString);
 
     }
-
 
 }

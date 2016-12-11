@@ -14,13 +14,25 @@ JANUARY 2 2020 = false
 
 public class Solution
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws Exception
     {
         System.out.println(isDateOdd("JANUARY 2 2020"));
+        System.out.println(isDateOdd("DECEMBER 30 2000"));
+
+/*    нужно было воспользоваться этим, а не плодить сущности....
+
+        SimpleDateFormat format = new SimpleDateFormat("MMMM d yyyy", Locale.ENGLISH);
+        Date myDate = format.parse("JANUARY 2 2016");
+        System.out.println(myDate);
+*/
     }
 
     public static boolean isDateOdd(String date)
     {
+
+        //Calendar tmptttt = Calendar.getInstance();
+        //tmptttt.setTime(Calendar.);
+
         Calendar tmpDate = Calendar.getInstance();
         Calendar tmpDateStart = Calendar.getInstance();
         String[] arrDate = date.split(" ");

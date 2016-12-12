@@ -14,14 +14,16 @@ public class Solution
     public static StackTraceElement[] method1()
     {
         method2();
-        //напишите тут ваш код
-
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        return stackTraceElements;
     }
 
     public static StackTraceElement[] method2()
     {
         method3();
         //напишите тут ваш код
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        return stackTraceElements;
 
     }
 
@@ -29,6 +31,8 @@ public class Solution
     {
         method4();
         //напишите тут ваш код
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        return stackTraceElements;
 
     }
 
@@ -36,12 +40,16 @@ public class Solution
     {
         method5();
         //напишите тут ваш код
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        return stackTraceElements;
 
     }
 
     public static StackTraceElement[] method5()
     {
         //напишите тут ваш код
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        return stackTraceElements;
 
     }
 }

@@ -3,7 +3,8 @@ package com.javarush.test.level08.lesson11.bonus02;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 /* Нужно добавить в программу новую функциональность
 Задача: Программа определяет, какая семья (фамилию) живёт в доме с указанным номером.
@@ -29,25 +30,22 @@ public class Solution
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         //list of addresses
-        //List<String> addresses = new ArrayList<String>();
-        HashMap<String,String> addresses = new HashMap<>();
+        List<String> addresses = new ArrayList<String>();
         while (true)
         {
-            String city = reader.readLine();
-            if (city.isEmpty()) break;
             String family = reader.readLine();
+            if (family.isEmpty()) break;
 
-
-            addresses.put(city,family);
+            addresses.add(family);
         }
 
         //read home number
-        String city = reader.readLine();
+        int houseNumber = Integer.parseInt(reader.readLine());
 
-        //if (0 <= houseNumber && houseNumber < addresses.size())
-        //{
-            String familySecondName = addresses.get(city);
+        if (0 <= houseNumber && houseNumber < addresses.size())
+        {
+            String familySecondName = addresses.get(houseNumber);
             System.out.println(familySecondName);
-        //}
+        }
     }
 }

@@ -2,6 +2,10 @@ package com.javarush.test.level07.lesson12.bonus03;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.sql.Array;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Map;
 
 /* Задача по алгоритмам
 Задача: Написать программу, которая вводит с клавиатуры 20 чисел и выводит их в убывающем порядке.

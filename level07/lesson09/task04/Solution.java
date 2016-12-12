@@ -36,16 +36,32 @@ public class Solution
         for (String s : list)
         {
             System.out.println(s);
-
         }
     }
 
     public static ArrayList<String> fix(ArrayList<String> list)
     {
+        ArrayList<String> tmpList= new ArrayList<String>();
+        int i=0;
         for (String s:list)
         {
+            if (s.contains("р") ^ s.contains("л"))
+            {
 
+                if (s.contains("л"))
+                {
+                    tmpList.add(s);
+                    tmpList.add(s);
+                }
+
+            }
+            else
+            {
+                tmpList.add(s);
+            }
+
+            i++;
         }
-        return null;
+        return tmpList;
     }
 }

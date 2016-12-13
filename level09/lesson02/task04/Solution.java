@@ -8,7 +8,15 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        System.out.println(method1().length);
+        StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
+        stackTraceElements = method1();
+        for (StackTraceElement element : stackTraceElements)
+        {
+            System.out.println(element.getMethodName());
+        }
+        System.out.println(stackTraceElements[stackTraceElements.length-1]);
+        System.out.println(Thread.currentThread().getStackTrace().length);
+        System.out.println(stackTraceElements.length);
 
     }
 
